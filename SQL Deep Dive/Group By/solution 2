@@ -1,0 +1,23 @@
+1.SELECT hire_date, COUNT(emp_no) as "amount"
+FROM employees
+GROUP BY hire_date
+
+2.SELECT 
+a.emp_no ,
+COUNT(b.title)
+FROM employees as a
+INNER JOIN titles as b ON b.emp_no=a.emp_no
+WHERE EXTRACT(YEAR FROM hire_date)>1991
+GROUP BY a.emp_no
+
+3.SELECT 
+a.emp_no,
+b.from_date,
+b.to_date,
+c.dept_no,
+c.dept_name
+FROM employees as a 
+INNER JOIN dept_emp as b USING(emp_no)
+INNER JOIN departments AS c USING(dept_no)
+WHERE c.dept_name='Development'
+ 
