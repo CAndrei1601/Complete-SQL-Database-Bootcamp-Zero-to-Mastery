@@ -1,0 +1,17 @@
+1.SELECT 
+a.customerid,
+a.state,
+b.orderid
+FROM customers AS a
+INNER JOIN orders AS b ON a.customerid=b.customerid 
+AND (a.state='OH' OR a.state='NY' Or a.state='OR')
+
+3.SELECT 
+a.emp_no,
+b.dept_no,
+c.dept_name
+
+From  employees AS a 
+Inner join dept_emp AS b on a.emp_no=b.emp_no 
+INNER JOIN departments AS c oN b.dept_no=c.dept_no
+ORDER BY emp_no ASC
